@@ -25,6 +25,7 @@ search.addEventListener('click', async (event) => {
     }
 });
 
+//Get the cities info, its necessary to fetch the weather forecast.
 async function getCityInf(city) {    
     const url = `https://api.api-ninjas.com/v1/city?name=${city}`;
     const result = await fetch(url,
@@ -39,6 +40,7 @@ async function getCityInf(city) {
     return result;
 }
 
+//Get historical events of the cities.
 async function getHistory(city) {    
     const url = `https://api.api-ninjas.com/v1/historicalevents?text=${city}`;
     const result = await fetch(url,
