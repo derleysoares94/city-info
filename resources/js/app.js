@@ -26,7 +26,7 @@ search.addEventListener('click', async (event) => {
     const temperature = weather.main.temp;
 
     temp.innerText            = temperature;
-    img.src                   = `/resources/img/wheater-icon/${icon}.png`;
+    img.src                   = `https://derleysoares94.github.io/city-info/resources/img/wheater-icon/${icon}.png`;
     current_weather.innerText = desc;
     real_feel.innerText       = feels_like;
     wind.innerText            = wind_speed;
