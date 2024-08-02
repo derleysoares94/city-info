@@ -65,7 +65,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: start;
     margin-top: 50px;
     margin-bottom: 50px;
 }
