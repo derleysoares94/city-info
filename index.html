@@ -2,17 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Next Place</title>
+        <title>City Info</title>
         <link rel="stylesheet" href="resources/css/style.css">
     </head>
     <body>
         <div class="wrapper">
             <header>
-                <span>Next Place</span>
+                <span>City Info</span>
                 <nav>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="/resources/view/about.html">About</a></li>
                     </ul>
                 </nav>
             </header>
@@ -24,8 +24,32 @@
                 </div>
                 <div class="inf-container">
                     <span id="inf" class="inf"></span>
-                    <div class="loader hide-loader" id="loader"></div>
                 </div>
+                <div class="wheater-container" id="weather-container">
+                    <figure class="wheater-figure">
+                        <img id="wheater-img" alt="wheater situation" src="#">
+                        <figcaption id="temperature">20C</figcaption>
+                    </figure>
+                    <div class="wheater-content">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Current Weather</th>
+                                    <td id="cur-weather" class="real-feel">Cloudy</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Real Feel</th>
+                                    <td id="real-feel">17</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Wind</th>
+                                    <td id="wind">23 km/h</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="loader hide-loader" id="loader"></div>
             </main>
             <footer>
                 <p>City Info &copy; 2024</p>
