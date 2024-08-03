@@ -70,7 +70,7 @@ footer {
     margin-bottom: 50px;
 }
 
-.wheater-container {
+.weather-container {
     display: none;
 }
 
@@ -147,27 +147,29 @@ footer {
         width: 350px;
     }
 
-    .wheater-container {
+    .weather-container {
         display: none;
         height: 200px;
         width: 450px;
         border: solid 1px #000000;
     }
 
-    .wheater-figure {
+    .weather-figure {
         display: flex;
         justify-content: start;
         align-items: center;
         flex-direction: column;
     }
 
-    .wheater-figure figcaption {
+    .weather-figure figcaption {
         font-size: 24px;
     }
 
-    .wheater-content {
+    .weather-content {
         display: flex;
     }
+
+    
 }
 
 @media (min-width: 640px) and (orientation: landscape) {

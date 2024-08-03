@@ -5,7 +5,7 @@ search.addEventListener('click', async (event) => {
     const cityName          = document.getElementById('city').value;
     const inf               = document.getElementById('inf');
     const temp              = document.getElementById('temperature');
-    const img               = document.getElementById('wheater-img');
+    const img               = document.getElementById('weather-img');
     const current_weather   = document.getElementById('cur-weather');
     const real_feel         = document.getElementById('real-feel');
     const wind              = document.getElementById('wind');
@@ -18,7 +18,7 @@ search.addEventListener('click', async (event) => {
 
     const cityInfo = await getCityInfo(cityName);
 
-    const weather     = await getWheater(cityInfo[0].latitude, cityInfo[0].longitude);
+    const weather     = await getweather(cityInfo[0].latitude, cityInfo[0].longitude);
     const icon        = weather.weather[0].icon;
     const desc        = weather.weather[0].description;
     const feels_like  = weather.main.feels_like;
@@ -26,7 +26,7 @@ search.addEventListener('click', async (event) => {
     const temperature = weather.main.temp;
 
     temp.innerText            = temperature;
-    img.src                   = `https://derleysoares94.github.io/city-info/resources/img/wheater-icon/${icon}.png`;
+    img.src                   = `https://derleysoares94.github.io/city-info/resources/img/weather-icon/${icon}.png`;
     current_weather.innerText = desc;
     real_feel.innerText       = feels_like;
     wind.innerText            = wind_speed;
@@ -79,8 +79,8 @@ async function getHistory(city) {
     return result;
 }
 
-//Get wheater forecast of the city using latitude and longitude.
-async function getWheater(lat, lon) {
+//Get weather forecast of the city using latitude and longitude.
+async function getweather(lat, lon) {
     const key = '115f8ede73325a9df6cd7c03106ebadd';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
     const result = await fetch(url,
