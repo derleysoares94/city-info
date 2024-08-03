@@ -11,8 +11,11 @@ search.addEventListener('click', async (event) => {
     const wind              = document.getElementById('wind');
     const loader            = document.getElementById('loader');
     const weather_container = document.getElementById('weather-container');
+    const city_title        = document.getElementById('city-name');
+    const wrapper           = document.getElementById('wrapper');
 
     inf.innerHTML = '';
+    city_title.innerText = '';
     loader.classList.remove("hide-loader");
     weather_container.style.display = "none";
 
@@ -32,16 +35,16 @@ search.addEventListener('click', async (event) => {
     wind.innerText            = wind_speed;
 
     const histories = await getHistory(cityName);
+    city_title.innerText = cityName;
+    document.getElementById('city').value = '';
 
     if (histories.length !== 0) {
         histories.forEach(history => {
             let text = `${history.day}/${history.month}/${history.year} Event: ${history.event}` + "<br>";
             inf.innerHTML += text + "<br>";
-            //typingText(text, document.getElementById('inf'));
         });
         loader.classList.add("hide-loader");
         weather_container.style.display = "flex";
-        
     } else {
         loader.classList.add("hide-loader");
         inf.innerHTML = `Sorry, we could not find any history event for ${cityName}`;
@@ -92,17 +95,4 @@ async function getweather(lat, lon) {
         .catch(error => console.error(error));
 
     return result;
-}
-
-//Pretending that we are typing
-async function typingText(text, element, delay = 80) {
-    const letters = text.split('');
-
-    let i = 0;
-    while(i < letters.length) {
-        await new Promise(resolve => setTimeout(resolve, delay));
-        element.innerHTML += letters[i];
-        i++;
-    }
-    return;
 }

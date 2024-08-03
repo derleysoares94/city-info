@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="resources/css/style.css">
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper" id="wrapper">
             <header>
                 <span>City Info logo</span>
                 <nav>
@@ -22,28 +22,31 @@
                     <input type="text" id="city" name="city" placeholder="Search for a city">
                     <button type="button" id="search">Search</button>
                 </div>
+                <span id="city-name"></span>
                 <div class="inf-container">
                     <span id="inf" class="inf"></span>
                 </div>
                 <div class="weather-container" id="weather-container">
-                    <figure class="weather-figure">
-                        <img id="weather-img" alt="weather situation" src="#">
-                        <figcaption id="temperature">20C</figcaption>
-                    </figure>
+                    <div class="weather-figure">
+                        <figure>
+                            <img id="weather-img" alt="weather situation" src="#">
+                            <figcaption id="temperature">20C</figcaption>
+                        </figure>
+                    </div>
                     <div class="weather-content">
                         <table>
                             <tbody>
                                 <tr>
-                                    <th scope="row">Current Weather</th>
-                                    <td id="cur-weather" class="real-feel">Cloudy</td>
+                                    <th scope="row">Weather:</th>
+                                    <td id="cur-weather" class="real-feel"></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Real Feel</th>
-                                    <td id="real-feel">17</td>
+                                    <th scope="row">Real Feel:</th>
+                                    <td id="real-feel"></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Wind</th>
-                                    <td id="wind">23 km/h</td>
+                                    <th scope="row">Wind:</th>
+                                    <td id="wind"></td>
                                 </tr>
                             </tbody>
                         </table>
