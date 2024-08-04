@@ -22,6 +22,15 @@ main {
     padding-bottom: 150px;
 }
 
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 65px;
+    font-size: 30px;
+}
+
 h1 {
     margin-top: 0;
     font-size: 35px;
@@ -61,6 +70,10 @@ header {
     margin-bottom: 40px;
 }
 
+.inf {
+    font-size: 20px;
+}
+
 #city-name {
     font-size: 50px;
 }
@@ -69,7 +82,7 @@ header {
 .weather-container {
     display: none;
     height: 600px;
-    width: 550px;
+    width: 580px;
     border: solid 1px #000000;
     flex-direction: column;
     justify-content: center;
@@ -133,6 +146,10 @@ footer {
     margin-bottom: 50px;
 }
 
+.error {
+    color: #e40404;
+}
+
 /*Creating loader*/
 .loader {
     border: 16px solid #f3f3f3;
@@ -186,6 +203,12 @@ footer {
 }
 
 @media (min-width: 1024px) {
+    nav a {
+        width: 150px;
+        height: 35px;
+        font-size: 18px;
+    }
+
     h1 {
         font-size: 30px;
     }
@@ -206,6 +229,10 @@ footer {
 
     #city-name {
         font-size: 30px;
+    }
+
+    .inf {
+        font-size: 18px;
     }
 
     /*Weather box*/

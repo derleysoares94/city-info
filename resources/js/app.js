@@ -12,7 +12,6 @@ search.addEventListener('click', async (event) => {
     const loader            = document.getElementById('loader');
     const weather_container = document.getElementById('weather-container');
     const city_title        = document.getElementById('city-name');
-    const wrapper           = document.getElementById('wrapper');
 
     inf.innerHTML = '';
     city_title.innerText = '';
@@ -21,7 +20,15 @@ search.addEventListener('click', async (event) => {
 
     const cityInfo = await getCityInfo(cityName);
 
-    const weather     = await getweather(cityInfo[0].latitude, cityInfo[0].longitude);
+    if (cityInfo.error || cityInfo.length === 0) {
+        loader.classList.add("hide-loader");
+        inf.classList.add('error');
+        inf.innerHTML = `Sorry, we could not find the city, Make sure to write a city name.`;
+        return
+    }
+
+    const weather = await getweather(cityInfo[0].latitude, cityInfo[0].longitude);
+
     const icon        = weather.weather[0].icon;
     const desc        = weather.weather[0].description;
     const feels_like  = weather.main.feels_like;
@@ -43,10 +50,12 @@ search.addEventListener('click', async (event) => {
             let text = `${history.day}/${history.month}/${history.year} Event: ${history.event}` + "<br>";
             inf.innerHTML += text + "<br>";
         });
+        inf.classList.remove('error');
         loader.classList.add("hide-loader");
         weather_container.style.display = "flex";
     } else {
         loader.classList.add("hide-loader");
+        inf.classList.remove('error');
         inf.innerHTML = `Sorry, we could not find any history event for ${cityName}`;
         weather_container.style.display = "flex";
     }
@@ -62,8 +71,8 @@ async function getCityInfo(city) {
     })
     .then(response => response.json())
     .then(data => { return data })
-    .catch(error => console.error(error));    
-    
+    .catch(error => console.error(error));   
+
     return result;
 }
 
