@@ -31,9 +31,9 @@ search.addEventListener('click', async (event) => {
 
     const icon        = weather.weather[0].icon;
     const desc        = weather.weather[0].description;
-    const feels_like  = weather.main.feels_like;
+    const feels_like = Math.round(weather.main.feels_like) + "°C";
     const wind_speed  = weather.wind.speed;
-    const temperature = weather.main.temp;
+    const temperature = Math.round(weather.main.temp) + "°C";
 
     temp.innerText            = temperature;
     img.src                   = `https://derleysoares94.github.io/city-info/resources/img/weather-icon/${icon}.png`;
