@@ -46,10 +46,19 @@ search.addEventListener('click', async (event) => {
     document.getElementById('city').value = '';
 
     if (histories.length !== 0) {
-        histories.forEach(history => {
+        
+        //order array by year.
+        histories.sort(function(a,b){
+            if(a.year < b.year) {
+                return -1;
+            } else {
+                return true;
+            }
+        }).forEach(history => { 
             let text = `${history.day}/${history.month}/${history.year} Event: ${history.event}` + "<br>";
             inf.innerHTML += text + "<br>";
         });
+
         inf.classList.remove('error');
         loader.classList.add("hide-loader");
         weather_container.style.display = "flex";
