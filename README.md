@@ -43,6 +43,10 @@ To set up the project locally, follow these steps:
 
     Visit `http://localhost:3000/index.html` to view the application.
 
+4. **GitHub Pages URL**:
+
+    Visit `https://derleysoares94.github.io/city-info/`
+
 ## Usage
 
 - Enter a city name in the search bar to get information.
