@@ -19,7 +19,7 @@ City Info is a web application that provides users with historical data and weat
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
-- - **Backend**: JavaScript
+- **Backend**: JavaScript
 - **APIs**: 
   - OpenWeatherMap API (for weather data)
   - API Ninjas (for historical data)
