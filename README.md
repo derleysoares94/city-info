@@ -45,7 +45,7 @@ To set up the project locally, follow these steps:
 
 4. **GitHub Pages URL**:
 
-    Visit `https://derleysoares94.github.io/city-info/`
+    Visit [City Info](https://derleysoares94.github.io/city-info/)
 
 ## Usage
 
